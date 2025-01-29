@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-class InstantSerializerTest extends BaseComponent {
+final class InstantSerializerTest extends BaseComponent {
 
   private static final AtomicLong EPOC_SECOND = new AtomicLong(0);
   @Autowired
