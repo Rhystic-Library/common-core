@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class InstantModuleTest extends BaseComponent {
+final class InstantModuleTest extends BaseComponent {
 
   private static final String ISO_8601_TIMESTAMP = "2024-02-19T06:59:19.220123Z";
   private static final Instant TIMESTAMP = Instant.parse(ISO_8601_TIMESTAMP);
@@ -29,7 +29,7 @@ class InstantModuleTest extends BaseComponent {
 
   @MethodSource("provideSetupModuleData")
   @ParameterizedTest
-  public <T> void testSetupModule(Object source, Class<T> tClass, T expected) {
+  <T> void testSetupModule(Object source, Class<T> tClass, T expected) {
     ModelMapper modelMapper = new ModelMapper();
     modelMapper.registerModule(this.instantModule);
 
